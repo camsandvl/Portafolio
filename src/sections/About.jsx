@@ -134,7 +134,7 @@ export default function About() {
                     color: '#fff',
                     letterSpacing: '0.03em',
                   }}>
-                    Niño, mi gato 🐱
+                    Nino, mi gato 🐱
                   </div>
                 </motion.div>
               )}
