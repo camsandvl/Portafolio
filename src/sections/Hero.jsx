@@ -1,20 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const container = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.11, delayChildren: 1.0 } },
-}
-
-const slideUp = {
-  hidden: { opacity: 0, y: 38 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-}
-
-const bigName = {
-  hidden: { opacity: 0, y: 90 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] } },
-}
+import { container, slideUp, bigName } from '../lib/animationVariants'
 
 const WORDS = ['desarrolladora web.', 'ilustradora.', 'diseñadora UI.']
 

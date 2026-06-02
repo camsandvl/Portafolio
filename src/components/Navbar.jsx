@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useHoverColor } from '../hooks/useHoverColor'
 
 const LINKS = [
   { label: 'Habilidades técnicas',        num: '01', href: '#projects' },
@@ -17,6 +18,8 @@ function scrollTo(href, cb) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const desktopLinkHover = useHoverColor('var(--text-muted)', 'var(--accent-dark)')
+  const mobileLinkHover = useHoverColor('var(--text)', 'var(--accent)')
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 60)
@@ -84,8 +87,7 @@ export default function Navbar() {
                     alignItems: 'center',
                     gap: 5,
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent-dark)'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
+                  {...desktopLinkHover}
                 >
                   <span style={{ color: 'var(--accent)', fontSize: 11, fontWeight: 700 }}>{link.num}.</span>
                   {link.label}
@@ -154,8 +156,7 @@ export default function Navbar() {
                   lineHeight: 1.2,
                   marginBottom: 'var(--space-3)',
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text)'}
+                {...mobileLinkHover}
               >
                 {link.label}
               </motion.a>

@@ -1,15 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const fadeLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
-}
-
-const fadeRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 } },
-}
+import { fadeLeft, fadeRight } from '../lib/animationVariants'
+import SectionLabel from '../components/SectionLabel'
 
 export default function About() {
   const [catOpen, setCatOpen] = useState(false)
@@ -21,12 +13,7 @@ export default function About() {
     >
       <div className="container">
 
-        {/* Section label */}
-        <div className="section-label">
-          <span className="section-num">03</span>
-          <span className="section-rule" />
-          <span className="section-name">Sobre mí</span>
-        </div>
+        <SectionLabel num="03" name="Sobre mí" />
 
         <div className="grid-2" style={{ alignItems: 'start' }}>
 

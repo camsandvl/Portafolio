@@ -5,14 +5,8 @@ import BrowserCard from '../components/cards/BrowserCard'
 import BackendCard from '../components/cards/BackendCard'
 import FigmaCard from '../components/cards/FigmaCard'
 import IpadCard from '../components/cards/IpadCard'
-
-const revealUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (delay = 0) => ({
-    opacity: 1, y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
-  }),
-}
+import SectionLabel from '../components/SectionLabel'
+import { revealUp } from '../lib/animationVariants'
 
 export default function Projects() {
   const shouldReduce = useReducedMotion()
@@ -21,12 +15,7 @@ export default function Projects() {
     <section id="projects" style={{ background: 'var(--bg-soft)', padding: 'var(--space-32) 0', overflow: 'hidden' }}>
       <div className="container">
 
-        {/* Section label */}
-        <div className="section-label">
-          <span className="section-num">01</span>
-          <span className="section-rule" />
-          <span className="section-name">Stack</span>
-        </div>
+        <SectionLabel num="01" name="Stack" />
 
         <motion.h2
           variants={revealUp}

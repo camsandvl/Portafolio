@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion'
+import SectionLabel from '../components/SectionLabel'
+import { useHoverColor } from '../hooks/useHoverColor'
 
 export default function Contact() {
+  const footerLinkHover = useHoverColor('var(--text-muted)', 'var(--accent)')
+
   return (
     <section id="contact" style={{ background: 'var(--bg)', padding: 'var(--space-32) 0 0', overflow: 'hidden' }}>
       <div className="container">
 
-        {/* Section label */}
-        <div className="section-label">
-          <span className="section-num">04</span>
-          <span className="section-rule" />
-          <span className="section-name">Contacto</span>
-        </div>
+        <SectionLabel num="04" name="Contacto" />
 
         {/* Big CTA heading */}
         <div style={{ maxWidth: 900, marginBottom: 'var(--space-16)' }}>
@@ -110,8 +109,7 @@ export default function Contact() {
             <a
               href="mailto:camsandvl@gmail.com"
               style={{ fontFamily: 'var(--font-body)', fontSize: 12.5, color: 'var(--text-muted)', transition: 'color 0.2s' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
+              {...footerLinkHover}
             >
               Email
             </a>
@@ -120,8 +118,7 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontFamily: 'var(--font-body)', fontSize: 12.5, color: 'var(--text-muted)', transition: 'color 0.2s' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--accent)'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-muted)'}
+              {...footerLinkHover}
             >
               GitHub
             </a>

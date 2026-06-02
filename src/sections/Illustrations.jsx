@@ -1,9 +1,6 @@
 import { motion } from 'framer-motion'
-
-const revealUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
-}
+import SectionLabel from '../components/SectionLabel'
+import { revealUp } from '../lib/animationVariants'
 
 export default function Illustrations() {
   return (
@@ -11,11 +8,7 @@ export default function Illustrations() {
 
       {/* ─── SECTION HEADER ─────────────────────────────── */}
       <div className="container" style={{ paddingTop: 'var(--space-32)' }}>
-        <div className="section-label">
-          <span className="section-num">02</span>
-          <span className="section-rule" />
-          <span className="section-name">Animaciones e Ilustraciones</span>
-        </div>
+        <SectionLabel num="02" name="Animaciones e Ilustraciones" />
 
         <motion.h2
           variants={revealUp}
@@ -49,12 +42,12 @@ export default function Illustrations() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          style={{ marginBottom: 'var(--space-6)' }}
+          style={{ marginTop: 'var(--space-16)', marginBottom: 'var(--space-16)' }}
         >
           <img
             src="./assets/character-brief-10poses.png"
             alt="Diseño de personaje — 10 poses"
-            style={{ width: '100%', borderRadius: 'var(--radius-lg)', display: 'block' }}
+            style={{ width: '85%', borderRadius: 'var(--radius-lg)', display: 'block', margin: '0 auto' }}
           />
         </motion.div>
 
@@ -69,7 +62,7 @@ export default function Illustrations() {
           <img
             src="./assets/character-brief-plush.png"
             alt="4 personajes estilo felpa"
-            style={{ width: '100%', borderRadius: 'var(--radius-lg)', display: 'block' }}
+            style={{ width: '85%', borderRadius: 'var(--radius-lg)', display: 'block', margin: '0 auto' }}
           />
         </motion.div>
 
