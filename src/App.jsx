@@ -48,7 +48,7 @@ export default function App() {
           name="Paisaje campo con casa — estilo Pixar"
           description="Morados, rosados y verdes"
           colors={['#9B7FD4', '#F0A0C8', '#6CC070', '#D4A0E8', '#A8E6A8']}
-          src="/assets/paisaje-campo.jpg"
+          src="./assets/paisaje-campo.jpg"
           fromColor="#141414"
           toColor="#0A0A0A"
         />
@@ -62,7 +62,7 @@ export default function App() {
           name="Paisaje piscina — perspectiva del nadador"
           description="Ilustración realista · celestes, amarillos, azules brillantes"
           colors={['#5AC8FA', '#FFE34A', '#1A9EFF', '#B8EDFF', '#FFD000']}
-          src="/assets/paisaje-piscina.png"
+          src="./assets/paisaje-piscina.png"
           fromColor="#0A0A0A"
           toColor="#0A0A0A"
         />

@@ -61,7 +61,7 @@ export default function Hero() {
                 style={{ transformOrigin: 'bottom center', display: 'inline-block', flexShrink: 0 }}
               >
                 <img
-                  src="/assets/logo-camaleon-grande.png"
+                  src="./assets/logo-camaleon-grande.png"
                   alt="C"
                   aria-hidden="true"
                   style={{
