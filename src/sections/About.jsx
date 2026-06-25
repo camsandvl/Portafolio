@@ -1,135 +1,97 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { fadeLeft, fadeRight } from '../lib/animationVariants'
-import SectionLabel from '../components/SectionLabel'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import SectionHeader from '../components/SectionHeader'
+import CardTitle from '../components/CardTitle'
+import BodyText from '../components/BodyText'
+
+const RISE = { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
 
 export default function About() {
-  const [catOpen, setCatOpen] = useState(false)
+  const titleRef = useRef(null)
+  const inView = useInView(titleRef, { once: true, margin: '-80px' })
 
   return (
-    <section
-      id="about"
-      style={{ padding: 'var(--space-32) 0', background: 'var(--bg)', overflow: 'hidden' }}
-    >
-      <div className="container">
+    <section id="about" style={{
+      background: 'var(--bg)',
+      minHeight: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      padding: '80px 0',
+    }}>
+      <div style={{
+        maxWidth: 1000,
+        margin: '0 auto',
+        padding: '0 40px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 70,
+        width: '100%',
+        boxSizing: 'border-box',
+      }}>
 
-        <SectionLabel num="03" name="Sobre mí" />
+        {/* Left — slides in from the left */}
+        <motion.div
+          style={{ flex: 'none' }}
+          initial={{ opacity: 0, x: -10 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          <SectionHeader label="Sobre mí" align="left" />
+        </motion.div>
 
-        <div className="grid-2" style={{ alignItems: 'start' }}>
-
-          {/* ── Text column ── */}
+        {/* Right — content */}
+        <div style={{ flex: 1 }}>
+          <CardTitle margin="0 0 20px">
+            <span ref={titleRef} style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom', marginRight: '0.25em' }}>
+              <motion.span
+                style={{ display: 'inline-block', color: 'var(--periwinkle)' }}
+                initial={{ y: '100%' }}
+                animate={{ y: inView ? 0 : '100%' }}
+                transition={RISE}
+              >Hola soy </motion.span>
+            </span>
+            {/* Outer span: positioning context for the scribble */}
+            <span style={{ position: 'relative', display: 'inline-block', verticalAlign: 'bottom' }}>
+              {/* Inner clip span: masks the text slide-up */}
+              <span style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom' }}>
+                <motion.span
+                  style={{ display: 'inline-block', color: 'var(--coral)' }}
+                  initial={{ y: '100%' }}
+                  animate={{ y: inView ? 0 : '100%' }}
+                  transition={{ ...RISE, delay: 0.1 }}
+                >Cami!</motion.span>
+              </span>
+              {/* Scribble underline — draws in after text settles */}
+              <svg
+                viewBox="0 0 100 10"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: 0, bottom: -2, width: '100%', height: 10, overflow: 'visible' }}
+              >
+                <motion.path
+                  d="M1,5 Q25,1 50,5 Q75,9 99,4"
+                  fill="none"
+                  stroke="var(--coral)"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: inView ? 1 : 0, opacity: inView ? 1 : 0 }}
+                  transition={{ duration: 0.5, ease: 'easeOut', delay: 1.1 }}
+                />
+              </svg>
+            </span>
+          </CardTitle>
           <motion.div
-            variants={fadeLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
           >
-            <h2 style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(2.2rem, 4.5vw, 4rem)',
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: '-0.03em',
-              marginBottom: 'var(--space-8)',
-            }}>
-              Mi Recorrido 
-            </h2>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', maxWidth: 520 }}>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-                Desde pequeña me interesó el diseño, especialmente la animación y la ilustración como formas de construir mundos y experiencias visuales. Durante mucho tiempo imaginé formar parte de proyectos creativos capaces de generar esa misma sensación de inmersión.
-              </p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-                Con el tiempo descubrí el desarrollo web y encontré otra forma de construir experiencias: a través de la interacción, la estructura y la tecnología. Me atrajo la posibilidad de transformar ideas en productos funcionales, diseñando interfaces y experiencias digitales donde lo visual y lo técnico trabajan en conjunto. Más adelante, ese interés evolucionó hacia el desarrollo de aplicaciones y el mundo interactivo de los videojuegos.
-              </p>
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-                Hoy disfruto combinar creatividad y desarrollo para construir experiencias intuitivas, visualmente cuidadas y centradas en el usuario.
-              </p>
-            </div>
-
-          </motion.div>
-
-          {/* ── Cat illustration column ── */}
-          <motion.div
-            variants={fadeRight}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            style={{ position: 'relative' }}
-          >
-            <img
-              src="./assets/gato-ilustracion.png"
-              alt="Mi gato, ilustrado por Camila Sandoval"
-              style={{ width: '100%', borderRadius: 'var(--radius-lg)', display: 'block' }}
-            />
-
-            {/* Clickable hint */}
-            <motion.button
-              onClick={() => setCatOpen(v => !v)}
-              aria-label="Ver foto de mi gato"
-              whileHover={{ opacity: 1 }}
-              style={{
-                position: 'absolute',
-                bottom: 16,
-                left: 80,
-                background: 'none',
-                border: 'none',
-                padding: 0,
-                fontFamily: 'var(--font-body)',
-                fontSize: '0.7rem',
-                color: 'var(--text)',
-                letterSpacing: '0.04em',
-                opacity: 0.5,
-              }}
-            >
-              haz clic
-            </motion.button>
-
-            {/* Photo bubble */}
-            <AnimatePresence>
-              {catOpen && (
-                <motion.div
-                  key="cat-bubble"
-                  initial={{ opacity: 0, scale: 0.7, y: 10 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.7, y: 10 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                  style={{
-                    position: 'absolute',
-                    bottom: 56,
-                    left: 16,
-                    width: 180,
-                    borderRadius: 16,
-                    overflow: 'hidden',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.22)',
-                    border: '2px solid rgba(255,255,255,0.35)',
-                    zIndex: 10,
-                    transformOrigin: 'bottom left',
-                  }}
-                >
-                  <img
-                    src="./assets/nino-gato.jpg"
-                    alt="Niño, mi gato"
-                    style={{ width: '100%', aspectRatio: '1 / 1', objectFit: 'cover', display: 'block' }}
-                  />
-                  <div style={{
-                    background: 'rgba(0,0,0,0.55)',
-                    backdropFilter: 'blur(4px)',
-                    padding: '6px 10px',
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '0.68rem',
-                    color: '#fff',
-                    letterSpacing: '0.03em',
-                  }}>
-                    Nino, mi gato 🐱
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-
+            <BodyText color="var(--stone)">Soy estudiante de tercer año de Ingeniería en Ciencia de la Computación y Tecnologías de la Información en la Universidad del Valle de Guatemala, con interés tanto en el desarrollo de software como en el diseño de experiencias digitales. Me apasiona la intersección entre tecnología, diseño y creatividad.<br /><br />Mi formación técnica me permite comprender el proceso completo de desarrollo de productos digitales, mientras que mi experiencia en ilustración digital ha fortalecido mis habilidades de creatividad, comunicación visual y pensamiento centrado en el usuario.</BodyText>
           </motion.div>
         </div>
+
       </div>
     </section>
   )

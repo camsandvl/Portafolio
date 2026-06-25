@@ -42,7 +42,7 @@ export default function Projects() {
         </p>
 
         {/* Click hint */}
-        <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'rgba(255,255,255,0.55)', textAlign: 'center', marginTop: 'var(--space-16)', marginBottom: 'var(--space-6)' }}>
+        <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, fontWeight: 300, lineHeight: 1.9, color: 'var(--text-muted)', textAlign: 'center', marginTop: 'var(--space-16)', marginBottom: 'var(--space-6)' }}>
           Dale click a las cartas para saber más sobre mi experiencia y proyectos
         </p>
 
@@ -73,7 +73,7 @@ export default function Projects() {
             textAlign: 'center',
             fontFamily: 'var(--font-body)',
             fontSize: 17,
-            color: 'rgba(255,255,255,0.55)',
+            color: 'var(--text-muted)',
             lineHeight: 1.9,
             fontWeight: 300,
           }}
@@ -92,8 +92,7 @@ export default function Projects() {
           }
           .mockup-row > * {
             flex: none !important;
-            min-height: 280px !important;
-            height: auto !important;
+            height: 400px !important;
           }
         }
       `}</style>

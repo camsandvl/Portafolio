@@ -5,16 +5,24 @@
   /* Fonts */
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Epilogue', system-ui, sans-serif;
+  --font-hero: 'Bricolage Grotesque', system-ui, sans-serif;
 
-  /* Colors */
-  --bg:          #0A0A0A;
-  --bg-soft:     #141414;
-  --text:        #F0EEE8;
-  --text-muted:  #9A9895;
-  --accent:      #00D4A0;
-  --accent-dark: #00C090;
-  --accent-glow: rgba(0, 212, 160, 0.12);
-  --border:      #252523;
+  /* Palette */
+  --coral:      #ED6A5A;
+  --periwinkle: #89AAE6;
+  --dark:       #1E000E;
+  --cream:      #faf8ef;
+  --teal:       #08605F;
+  --stone:      #9b958b;
+
+  /* Semantic tokens */
+  --bg:          var(--cream);
+  --bg-soft:     #dedad0;
+  --text:        var(--dark);
+  --text-muted:  #6B6967;
+  --accent:      var(--teal);
+  --accent-alt:  var(--coral);
+  --border:      #d4d0c0;
 
   /* Spacing */
   --space-2:  0.5rem;
@@ -51,7 +59,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: #0A0A0A;
+  background-color: #FAF9F6;
 }
 
 body {
@@ -122,8 +130,9 @@ button { font-family: inherit; }
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.25em;
-  color: var(--accent);
+  color: #000;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .section-rule {
@@ -138,8 +147,9 @@ button { font-family: inherit; }
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: var(--text-muted);
+  color: #000;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 /* ─────────────────────────────────────────────
@@ -209,7 +219,7 @@ button { font-family: inherit; }
     z-index: 99999;
     transform: translate(-50%, -50%);
     font-size: 18px;
-    color: #ffffff;
+    color: var(--text);
     line-height: 1;
     transition: font-size 0.2s cubic-bezier(0.16,1,0.3,1),
                 opacity 0.2s;
@@ -223,8 +233,52 @@ button { font-family: inherit; }
 }
 
 /* ─────────────────────────────────────────────
+   CHARACTER DESIGN IMAGES
+───────────────────────────────────────────── */
+.char-img-wrap {
+  margin: var(--space-16) 0;
+}
+.char-img {
+  width: 85%;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .char-img-wrap {
+    margin: var(--space-6) 0;
+  }
+  .char-img {
+    width: 100%;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   LANDSCAPE BREAK
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .landscape-break {
+    height: 55vh;
+  }
+}
+
+/* ─────────────────────────────────────────────
    ANIMATIONS
 ───────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.tw-cursor {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.82em;
+  background: currentColor;
+  margin-left: 0.06em;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: blink 1s step-end infinite;
+}
+
 @keyframes tickerLeft {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }

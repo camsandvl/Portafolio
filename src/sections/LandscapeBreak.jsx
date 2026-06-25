@@ -12,6 +12,7 @@ export default function LandscapeBreak({ id, name, description, colors, fromColo
     <section
       id={id}
       aria-label={label || name}
+      className="landscape-break"
       style={{ position: 'relative', height: '100vh' }}
     >
       {/* ── Illustration ── */}

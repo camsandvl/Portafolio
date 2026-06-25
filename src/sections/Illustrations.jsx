@@ -42,12 +42,13 @@ export default function Illustrations() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          style={{ marginTop: 'var(--space-16)', marginBottom: 'var(--space-16)' }}
+          className="char-img-wrap"
         >
           <img
             src="./assets/character-brief-10poses.png"
             alt="Diseño de personaje — 10 poses"
-            style={{ width: '85%', borderRadius: 'var(--radius-lg)', display: 'block', margin: '0 auto' }}
+            className="char-img"
+            style={{ borderRadius: 'var(--radius-lg)', display: 'block' }}
           />
         </motion.div>
 
@@ -57,12 +58,13 @@ export default function Illustrations() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          style={{ marginBottom: 'var(--space-6)' }}
+          className="char-img-wrap"
         >
           <img
             src="./assets/character-brief-plush.png"
             alt="4 personajes estilo felpa"
-            style={{ width: '85%', borderRadius: 'var(--radius-lg)', display: 'block', margin: '0 auto' }}
+            className="char-img"
+            style={{ borderRadius: 'var(--radius-lg)', display: 'block' }}
           />
         </motion.div>
 

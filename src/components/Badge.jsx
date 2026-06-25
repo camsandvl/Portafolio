@@ -1,17 +1,19 @@
-export default function Badge({ icon, label, color, bg, border, fontSize = 11, padding = '4px 10px', gap = 5, letterSpacing = '0.07em', fontWeight = 600, style }) {
+export default function Badge({ label, color }) {
   return (
-    <div style={{
-      display: 'inline-flex', alignItems: 'center', gap,
-      background: bg,
-      ...(border ? { border: `0.5px solid ${border}` } : {}),
-      borderRadius: 99,
-      padding,
-      ...style,
+    <span style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      background: 'var(--cream)',
+      borderRadius: 999,
+      padding: '5px 14px',
+      fontFamily: "'Inter Tight', sans-serif",
+      fontWeight: 600,
+      fontSize: '0.78rem',
+      letterSpacing: '0.01em',
+      color,
+      whiteSpace: 'nowrap',
     }}>
-      {icon}
-      <span style={{ fontSize, color, fontWeight, letterSpacing, fontFamily: 'var(--font-body)' }}>
-        {label}
-      </span>
-    </div>
+      {label}
+    </span>
   )
 }
