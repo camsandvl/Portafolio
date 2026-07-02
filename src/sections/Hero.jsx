@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import UILabel from '../components/UILabel'
 import { Typewriter } from '../components/ui/TypewriterText'
 import { container, slideUp, bigName } from '../lib/animationVariants'
 
+const LOGO_VARIANTS = ['./assets/logo-camaleon-grande.png', './assets/logo-teal.png', './assets/logo-coral.png']
+
 export default function Hero() {
+  const [logo] = useState(() => {
+    const prevIndex = Number(localStorage.getItem('heroLogoIndex') ?? -1)
+    const nextIndex = (prevIndex + 1) % LOGO_VARIANTS.length
+    localStorage.setItem('heroLogoIndex', String(nextIndex))
+    return LOGO_VARIANTS[nextIndex]
+  })
+
   return (
     <section
       id="hero"
@@ -42,7 +52,7 @@ export default function Hero() {
                 loop={false}
               />
               <img
-                src="./assets/logo-camaleon-grande.png"
+                src={logo}
                 alt=""
                 aria-hidden="true"
                 style={{ height: '1em', width: 'auto', display: 'block', flexShrink: 0 }}

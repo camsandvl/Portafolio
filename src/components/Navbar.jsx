@@ -4,7 +4,7 @@ import { useHoverColor } from '../hooks/useHoverColor'
 import NavLink from './NavLink'
 
 const LEFT_LINKS = [
-  { label: 'Casos de estudio', href: '#casos' },
+  { label: 'Casos de estudio', href: '#casos-heading' },
   { label: 'Sobre mí',         href: '#about' },
 ]
 const RIGHT_LINKS = [

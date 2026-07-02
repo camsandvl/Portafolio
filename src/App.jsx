@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { useEffect, useLayoutEffect, useState } from 'react'
+import { HashRouter, Routes, Route, useParams, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import CasosDeEstudio from './sections/CasosDeEstudio'
@@ -7,6 +7,23 @@ import About from './sections/About'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import CaseStudyPage from './pages/CaseStudyPage'
+
+if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }, [pathname])
+  return null
+}
+
+function CaseStudyPageKeyed() {
+  const { slug } = useParams()
+  return <CaseStudyPage key={slug} />
+}
 
 function MainPage() {
   return (
@@ -40,6 +57,7 @@ export default function App() {
 
   return (
     <HashRouter>
+      <ScrollToTop />
       <div
         className={`cursor-sparkle ${big ? 'hovered' : ''}`}
         style={{ left: cursor.x, top: cursor.y }}
@@ -50,7 +68,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/caso/:slug" element={<CaseStudyPage />} />
+        <Route path="/caso/:slug" element={<CaseStudyPageKeyed />} />
       </Routes>
     </HashRouter>
   )

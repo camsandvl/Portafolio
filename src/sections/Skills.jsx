@@ -8,7 +8,7 @@ import SkillModal from '../components/SkillModal'
 const PILLS = [
   { label: 'Frontend Dev',         title: 'Frontend Development', color: 'var(--coral)',      badges: ['HTML 5', 'Kotlin', 'Javascript', 'Typescript', 'CSS', 'React', 'React Native', 'Next.js'], description: 'Mi formación en ingeniería y mi interés por el diseño me permiten convertir prototipos y conceptos visuales en productos web funcionales y atractivos.', top: 'calc(50% - 110px)', left: 'calc(50% - 150px)', rotate: -7 },
   { label: 'DB & Backend',         title: 'DB & Backend',         color: 'var(--periwinkle)', badges: ['Node.js', 'PostgreSQL', 'MariaDB', 'Prisma', 'Neo4J'],                          description: 'Cuento con experiencia en modelado de bases de datos y desarrollo backend, aplicando principios de organización, escalabilidad y manejo eficiente de la información para respaldar aplicaciones digitales.', top: 'calc(50% - 95px)',  left: 'calc(50% + 170px)', rotate: 8  },
-  { label: 'Digital Illustration', title: 'Digital Illustration', color: 'var(--teal)',       badges: ['Procreate', 'Character Design', 'Human Anatomy', 'Concept Art', 'Environment Design', 'Visual Storytelling'],                               description: 'A través de la ilustración digital, exploro la narrativa visual, el diseño de personajes y la construcción de entornos. Esta práctica ha enriquecido mi enfoque del diseño, permitiéndome crear experiencias visuales más atractivas y expresivas.', top: 'calc(50% + 110px)', left: 'calc(50% - 170px)', rotate: 7  },
+  { label: 'Digital Illustration', title: 'Digital Illustration', color: 'var(--teal)',       badges: ['Procreate', 'Character Design', 'Concept Art', 'Environment Design', 'Visual Storytelling'],                               description: 'A través de la ilustración digital, exploro la narrativa visual, el diseño de personajes y la construcción de entornos. Esta práctica ha enriquecido mi enfoque del diseño, permitiéndome crear experiencias visuales más atractivas y expresivas.', top: 'calc(50% + 110px)', left: 'calc(50% - 170px)', rotate: 7  },
   { label: 'UI/UX Design',         title: 'UI/UX Design',         color: 'var(--dark)',       badges: ['Figma', 'Wireframing', 'Prototyping', 'User Flows'],                            description: 'Diseño interfaces digitales intuitivas y centradas en el usuario, combinando funcionalidad y estética para crear experiencias claras, accesibles y atractivas.', top: 'calc(50% + 115px)', left: 'calc(50% + 160px)', rotate: -8 },
 ]
 
@@ -66,6 +66,7 @@ export default function Skills() {
     <section id="skills" style={{
       background: 'var(--bg)',
       position: 'relative',
+      scrollMarginTop: '72px',
       minHeight: '80vh',
       overflow: 'hidden',
       marginTop: '-15vh',

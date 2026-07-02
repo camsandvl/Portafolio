@@ -1,0 +1,45 @@
+<svg width="680" height="310" viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Transformación: de herramientas dispersas a un sistema unificado</title>
+<desc>Antes, la operación dependía de herramientas y procesos dispersos: hojas de cálculo, papel, llamadas y mensajes informales, y procesos manuales. Con el sistema, todo ocurre en una sola plataforma con acceso por rol, estado en vivo sin intervención manual, y trazabilidad completa de cada tarea.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<text x="340" y="22" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Antes</text>
+
+<rect x="94" y="44" width="64" height="36" rx="8" fill="#FFFFFF" stroke="#999999" stroke-width="0.5"/>
+<text x="126" y="62" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Excel</text>
+
+<rect x="178" y="58" width="64" height="36" rx="8" fill="#FFFFFF" stroke="#999999" stroke-width="0.5"/>
+<text x="210" y="76" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Papel</text>
+
+<rect x="262" y="40" width="160" height="36" rx="8" fill="#FFFFFF" stroke="#999999" stroke-width="0.5"/>
+<text x="342" y="58" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Llamadas y mensajes</text>
+
+<rect x="442" y="54" width="145" height="36" rx="8" fill="#FFFFFF" stroke="#999999" stroke-width="0.5"/>
+<text x="514" y="72" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Procesos manuales</text>
+
+<line x1="340" y1="104" x2="340" y2="138" stroke="#888888" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<text x="340" y="156" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Con el sistema</text>
+
+<rect x="70" y="178" width="540" height="100" rx="12" fill="#EFEFEC" stroke="#444444" stroke-width="0.5"/>
+<line x1="205" y1="188" x2="205" y2="268" stroke="#CCCCCC" stroke-width="0.5"/>
+<line x1="340" y1="188" x2="340" y2="268" stroke="#CCCCCC" stroke-width="0.5"/>
+<line x1="475" y1="188" x2="475" y2="268" stroke="#CCCCCC" stroke-width="0.5"/>
+
+<text x="138" y="217" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Una plataforma</text>
+<text x="138" y="239" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Todo en un lugar</text>
+
+<text x="273" y="217" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Roles</text>
+<text x="273" y="239" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Acceso por rol</text>
+
+<text x="408" y="217" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Estado en vivo</text>
+<text x="408" y="239" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Sin intervención</text>
+
+<text x="543" y="217" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="500" fill="#1A1A1A">Trazabilidad</text>
+<text x="543" y="239" text-anchor="middle" dominant-baseline="central" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#666666">Todo registrado</text>
+
+</svg>

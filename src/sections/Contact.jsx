@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import ContactPill from '../components/ContactPill'
 import BodyText from '../components/BodyText'
@@ -95,7 +95,6 @@ export default function Contact() {
             alignItems: 'center',
             justifyContent: 'center',
             gap: 24,
-            cursor: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23faf8ef' d='M12%2C1 L14.12%2C9.88 L23%2C12 L14.12%2C14.12 L12%2C23 L9.88%2C14.12 L1%2C12 L9.88%2C9.88 Z'/%3E%3C/svg%3E\") 12 12, auto",
           }}
         >
           {/* Heading — line-by-line mask reveal */}

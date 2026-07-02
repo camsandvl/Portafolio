@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 
 const CARD_W = 'calc((100vw - 48px) / 3.2)'
 
-export default function CaseCard({ title, color = 'var(--dark)', description, image, href = '#', to }) {
+export default function CaseCard({ title, color = 'var(--dark)', description, image, href = '#', to, width }) {
   const [hovered, setHovered] = useState(false)
 
   const style = {
     flexShrink: 0,
-    width: CARD_W,
+    width: width ?? CARD_W,
     borderRadius: 20,
     background: `linear-gradient(to bottom, ${color}, var(--cream))`,
     padding: '25px 25px 0 25px',

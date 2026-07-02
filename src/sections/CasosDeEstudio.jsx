@@ -80,6 +80,7 @@ export default function CasosDeEstudio() {
       `}</style>
 
       {/* Title */}
+      <div id="casos-heading" style={{ scrollMarginTop: '72px' }} />
       <motion.div
         initial={{ opacity: 0, y: 36 }}
         whileInView={{ opacity: 1, y: 0 }}
