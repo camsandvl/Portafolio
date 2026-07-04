@@ -114,7 +114,7 @@ export default function Contact() {
               >
                 Juntos
                 <img
-                  src="./assets/logo-camaleon-grande.png"
+                  src="./assets/logo-periwinkle.png"
                   alt=""
                   aria-hidden="true"
                   style={{ height: '0.75em', width: 'auto', display: 'block' }}

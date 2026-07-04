@@ -154,7 +154,7 @@ export const CASES = [
     title: 'Peerly',
     color: 'var(--periwinkle)',
     image: './assets/cover-peerly.png',
-    logo: './assets/logo-camaleon-grande.png',
+    logo: './assets/logo-periwinkle.png',
     label: 'UX Research · UX/UI Design',
     description: 'Creando oportunidades a través de la educación entre pares.',
     meta: {

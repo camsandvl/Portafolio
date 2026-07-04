@@ -4,7 +4,7 @@ import UILabel from '../components/UILabel'
 import { Typewriter } from '../components/ui/TypewriterText'
 import { container, slideUp, bigName } from '../lib/animationVariants'
 
-const LOGO_VARIANTS = ['./assets/logo-camaleon-grande.png', './assets/logo-teal.png', './assets/logo-coral.png']
+const LOGO_VARIANTS = ['./assets/logo-periwinkle.png', './assets/logo-teal.png', './assets/logo-coral.png']
 
 export default function Hero() {
   const [logo] = useState(() => {
