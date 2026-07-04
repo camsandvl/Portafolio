@@ -48,8 +48,8 @@ const FADE = (delay) => ({
 })
 
 const PILLS = [
-  { label: 'CV',     href: `${import.meta.env.BASE_URL}assets/Camila_Sandoval_CV.pdf`, icon: CVIcon     },
-  { label: 'github', href: 'https://github.com/camsandvl',  icon: GithubIcon },
+  { label: 'CV',     href: `${import.meta.env.BASE_URL}assets/Camila_Sandoval_CV.pdf`, icon: CVIcon,     target: '_blank', rel: 'noopener noreferrer' },
+  { label: 'github', href: 'https://github.com/camsandvl',  icon: GithubIcon, target: '_blank', rel: 'noopener noreferrer' },
   { label: 'correo', href: 'mailto:camsandvl@gmail.com',    icon: MailIcon   },
 ]
 
@@ -135,13 +135,13 @@ export default function Contact() {
 
           {/* Buttons — left→right cascade */}
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-            {PILLS.map(({ label, href, icon }, i) => (
+            {PILLS.map(({ label, href, icon, target, rel }, i) => (
               <motion.div
                 key={label}
                 animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 10 }}
                 {...FADE(0.62 + i * 0.08)}
               >
-                <ContactPill label={label} href={href} icon={icon} />
+                <ContactPill label={label} href={href} icon={icon} target={target} rel={rel} />
               </motion.div>
             ))}
           </div>

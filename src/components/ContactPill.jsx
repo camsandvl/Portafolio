@@ -1,9 +1,11 @@
 import UILabel from './UILabel'
 
-export default function ContactPill({ label, href, icon: Icon }) {
+export default function ContactPill({ label, href, icon: Icon, target, rel }) {
   return (
     <a
       href={href}
+      target={target}
+      rel={rel}
       style={{
         display: 'inline-flex',
         alignItems: 'center',
