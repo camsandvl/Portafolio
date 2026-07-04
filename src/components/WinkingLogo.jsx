@@ -11,6 +11,11 @@ export default function WinkingLogo({ src, alt = '', style }) {
   const winkSrc = WINK_MAP[src] ?? src
 
   useEffect(() => {
+    const preload = new Image()
+    preload.src = winkSrc
+  }, [winkSrc])
+
+  useEffect(() => {
     const id = setInterval(() => {
       setWinking(true)
       setTimeout(() => setWinking(false), 300)
