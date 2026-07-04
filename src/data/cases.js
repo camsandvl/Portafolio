@@ -5,12 +5,12 @@ export const CASES = [
     color: 'var(--teal)',
     image: './assets/cover-havit.png',
     logo: './assets/logo-teal.png',
-    label: 'Behavioral Design · UX/UI Design',
+    label: 'Behavioral Design · UX/UI Design · Frontend Development',
     description: 'Haciendo visible el esfuerzo detrás de cada meta.',
     meta: {
       team: '6 miembros',
-      timeline: '6 meses',
-      tools: 'Figma, Canva',
+      timeline: '6 meses · En curso',
+      tools: 'Figma, React Native',
       platform: 'Aplicación móvil',
     },
     sectionImages: {
@@ -79,16 +79,16 @@ export const CASES = [
   },
   {
     slug: 'maden',
-    title: 'Maden',
+    title: 'Maden Platform',
     color: 'var(--coral)',
     image: './assets/cover-maden.png',
     logo: './assets/logo-coral.png',
-    label: 'Product Design · Workflow Optimization',
-    description: 'Centralizando operaciones para una producción más eficiente.',
+    label: 'Product Design · Workflow Optimization · Frontend Development',
+    description: 'Proyecto realizado para una empresa del sector manufacturero.',
     meta: {
       team: '3 miembros',
       timeline: '3 meses · En curso',
-      tools: 'Figma, Claude Design',
+      tools: 'Figma, Claude Design, Next.js',
       platform: 'Sistema web',
     },
     sectionTitles: {
@@ -101,7 +101,7 @@ export const CASES = [
     sections: {
       problem: [
         { type: 'table', rows: [
-          ['Proyecto', 'Maden es una plataforma interna diseñada para digitalizar y optimizar procesos operativos dentro de una empresa manufacturera.'],
+          ['Proyecto', 'Este proyecto consistió en el diseño de una plataforma interna enfocada en optimizar procesos operativos y transformar flujos complejos en una experiencia clara y eficiente para distintos tipos de usuario.'],
           ['Reto de producto', '¿Cómo transformar procesos complejos y dependientes de múltiples áreas en una experiencia clara, eficiente y adaptada a distintos tipos de usuarios?'],
           ['Mi rol', 'Definí la arquitectura del producto, los flujos de usuario, la estructura de información y las decisiones de experiencia. Para acelerar la exploración visual utilicé IA como apoyo en el diseño de interfaces.'],
         ]},

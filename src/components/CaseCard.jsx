@@ -33,6 +33,7 @@ export default function CaseCard({ title, color = 'var(--dark)', description, im
           lineHeight: 1.1,
           color: 'var(--cream)',
           marginRight: '0.3em',
+          whiteSpace: 'nowrap',
         }}>
           {title}
         </span>
