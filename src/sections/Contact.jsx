@@ -48,7 +48,7 @@ const FADE = (delay) => ({
 })
 
 const PILLS = [
-  { label: 'CV',     href: '/cv.pdf',                       icon: CVIcon     },
+  { label: 'CV',     href: `${import.meta.env.BASE_URL}assets/Camila_Sandoval_CV.pdf`, icon: CVIcon     },
   { label: 'github', href: 'https://github.com/camsandvl',  icon: GithubIcon },
   { label: 'correo', href: 'mailto:camsandvl@gmail.com',    icon: MailIcon   },
 ]
