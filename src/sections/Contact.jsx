@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import ContactPill from '../components/ContactPill'
 import BodyText from '../components/BodyText'
+import WinkingLogo from '../components/WinkingLogo'
 function CVIcon({ size = 18, color = '#fff' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg">
@@ -113,10 +114,8 @@ export default function Contact() {
                 {...RISE(0.17)}
               >
                 Juntos
-                <img
+                <WinkingLogo
                   src="./assets/logo-periwinkle.png"
-                  alt=""
-                  aria-hidden="true"
                   style={{ height: '0.75em', width: 'auto', display: 'block' }}
                 />
               </motion.span>

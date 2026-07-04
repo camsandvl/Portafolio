@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import UILabel from '../components/UILabel'
 import { Typewriter } from '../components/ui/TypewriterText'
 import { container, slideUp, bigName } from '../lib/animationVariants'
+import WinkingLogo from '../components/WinkingLogo'
 
 const LOGO_VARIANTS = ['./assets/logo-periwinkle.png', './assets/logo-teal.png', './assets/logo-coral.png']
 
@@ -51,10 +52,8 @@ export default function Hero() {
                 speed={165}
                 loop={false}
               />
-              <img
+              <WinkingLogo
                 src={logo}
-                alt=""
-                aria-hidden="true"
                 style={{ height: '1em', width: 'auto', display: 'block', flexShrink: 0 }}
               />
             </span>
