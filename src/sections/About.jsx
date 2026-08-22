@@ -31,13 +31,29 @@ export default function About() {
 
         {/* Left — slides in from the left */}
         <motion.div
-          style={{ flex: 'none' }}
+          style={{ flex: 'none', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <SectionHeader label="Sobre mí" align="left" />
+          <SectionHeader
+            label="Sobre mí"
+            align="left"
+            style={{ transform: 'rotate(-7deg)', marginLeft: '-0.3em' }}
+          />
+          <img
+            src="./assets/fotocami.png"
+            alt="Camila Sandoval"
+            style={{
+              width: 220,
+              height: 220,
+              borderRadius: '50%',
+              objectFit: 'cover',
+              marginTop: 7,
+              marginLeft: '0.6em',
+            }}
+          />
         </motion.div>
 
         {/* Right — content */}
