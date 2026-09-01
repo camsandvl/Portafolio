@@ -50,15 +50,17 @@ export const CASES = [
       ],
       final: [
         { type: 'paragraph', text: 'El diseño final integra los hallazgos de investigación, las decisiones de diseño y las iteraciones realizadas durante el proyecto para ofrecer una experiencia más clara, flexible y centrada en la formación de hábitos saludables. Cada pantalla fue refinada a partir de la retroalimentación de usuarios, priorizando la usabilidad, la motivación y una interacción intuitiva.' },
-        { type: 'columns', clip: 6, items: [
-          { image: './assets/home-havit.png',      label: 'Inicio' },
-          { image: './assets/spaces-havit.png',    label: 'Chats/Espacios' },
-          { image: './assets/rest-days-havit.png', label: 'Días de descanso' },
-          { image: './assets/library-havit.png',   label: 'Biblioteca de fotos de constancia' },
+        { type: 'columns', noRound: true, items: [
+          { image: './assets/8B.png',  label: 'Perfil' },
+          { image: './assets/19A.png', label: 'Búsqueda' },
+          { image: './assets/10A.png', label: 'Retos personales' },
+          { image: './assets/12A.png', label: 'Álbum de constancia para un reto' },
         ]},
-        { type: 'columns', columns: 4, clip: 6, items: [
-          { image: './assets/perfil-havit.png',  label: 'Perfil' },
-          { image: './assets/search-havit.png',  label: 'Búsqueda' },
+        { type: 'columns', noRound: true, items: [
+          { image: './assets/15A.png', label: 'Información sobre un reto' },
+          { image: './assets/21B.png', label: 'Inicio' },
+          { image: './assets/23B.png', label: 'Creación de un reto' },
+          { image: './assets/28C.png', label: 'Día de descanso' },
         ]},
       ],
       results: [
